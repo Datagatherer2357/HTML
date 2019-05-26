@@ -1,0 +1,38 @@
+README for final assessment in Web Application Development GMIT
+Gareth Duffy: g00364693
+----------------------------------------------------------------------------------------------------
+This project is comprised of 6 html files pertaining to 6 individual pages of a consruction website.
+The website includes feature such as interactive DOM events, charts and hover-over elements.
+
+Web pages index is as follows:
+
+project_page1.html: Homepage
+project_page2.html: Statistics page
+project_page3.html: Services page
+project_page4.html: Client login page
+project_page5.html: Budget estimate page
+project_page6.html: Gallery page
+
+The homepage is called project_page1.html and should thus be opened first.
+
+There are 2 CSV files which provide the charts data for pages 1 and 3 (data.csv relates to page 3, 
+and client.csv for page 1). There are also two other charts built on arrays in pages 2 and 5. 
+
+There is a subfolder named "siteimages" which contains almost all of the images apart from the 
+website logo which is in the parent folder. 
+
+Microsoft Edge or Firefox should be used for best results and interactivity. For reasons still 
+unknown yet thoroughly explored, the CSV-related charts fail to load on Chrome but load on Edge 
+and Firefox perfectly. There is no issue with loading array-related charts on any browsers.
+
+There is another minor issue with the gallery flip images on page 6 only when using Firefox in that 
+when hovered over and flipped, the text is not displayed on the back of the image. This issue does 
+not occur with any other browser.
+
+The website should be ran while using the Python web server in the same folder to faciliate D3.js 
+elements and to maximise interactive experience. Go to the project folder location on the anaconda 
+command prompt and type "Python -m http.server". Leave the server running in the background. 
+
+Thank you
+
+----------------------------------------------------------------------------------------------------
