@@ -1,0 +1,315 @@
+<!DOCTYPEhtml> 
+<html> <!--Structure -->
+
+<head>
+
+<title>Renov-8 Services</title> <!--Gareth Duffy(G00364693)-->
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style> /*-- Presentation --*/
+
+/* Body text */
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+
+/* Button styling */
+.button {
+  background-color: #4CAF50; /* Green */
+  border: 3px solid #f44336;
+  border-radius: 4px; /* Rounded borders */
+  color: white;
+  padding: 16px 32px;
+  font-family: "Raleway", Arial, sans-serif
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.9s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+.button4 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #FFFF00;
+}
+
+.button4:hover {
+  background-color: #FFFF00;
+  color: white;
+}
+.button5 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid Indigo;
+}
+
+.button5:hover {
+  background-color: Indigo;
+  color: white;
+}
+
+/* Justify/centre text on page */
+body {
+	padding-top: 25px;
+	margin: auto;
+	width: 1050px;
+	font: 16px 
+	font-family: "Raleway", Arial, sans-serif
+}	
+
+/* When hovered bars change colour */
+rect:hover{fill:#f44336;}
+
+
+/* Add a background color and some padding */
+.container {
+  border-radius: 4px;
+  background-color: Lavender;
+  padding: 15px;
+  border: 2px solid #f44336;
+}
+
+/* Body text colour */
+body {color: DarkSlateGray;}
+
+/* Link classes */
+.link { color: #f44336; text-decoration: underline;} /* CSS link color (red) */
+.link:hover { color: #00FF00; } /* CSS link hover (green) */
+
+
+</style>
+</head>
+
+<!-- Background image -->
+<body background="siteimages\design2.jpg">
+
+<!-- Hyperlink buttons -->
+<a href="project_page1.html"><button class="button button1">Home</button>
+<a href="project_page2.html"><button class="button button2">Statistics</button>
+<a href="project_page4.html"><button class="button button3">Client login</button>
+<a href="project_page6.html"><button class="button button4">Gallery</button>
+<a href="project_page5.html"><button class="button button5">Budget estimate</button>
+<br/>
+
+<!-- Services container -->
+<div class="container">	
+<h3><b>Renov-8: Services</b></h3>
+<p>We offer a wide range excellent building services carried out by the best tradesmen available.</p>
+
+<!-- List (unordered) -->
+<ul style="list-style-type:disc;">
+  <li><b>Carpentry:</b> Our carpenters are artisans, they fit bespoke kitchens, cut and erect roofs, and solve any problem they encounter. </li>
+  <li><b>Plumbing:</b> Our plumbers are dedicated and diligent. From underfloor heating to rainwater recycle systems, they can do it all.</li>
+  <li><b>Electrical:</b> Our sparks are highly efficient and reliable tradesmen who will advise and assist you throughout your project.</li>
+  <li><b>Plastering:</b> Our plasterers are extremely hard working and perfectionists of their trade, their finish is second to none.</li>
+  <li><b>Blockwork:</b> We have a fantastic team thoroughly accomplished bricklayers and stonemasons to build your dream home.</li>
+  <li><b>Tiling:</b> Our tilers are painstakingly precise and go above and beyond to make your bathrooms and kitchens come to life.</li>
+  <li><b>Painting:</b> Our painters are the best in the business, they put Rembrandt to shame.</li>
+</ul>
+
+<p>We also offer much more in terms of specialist services such as damp-proofing, fibre-glass roofing and landscaping.</p>
+</div>
+</br>
+
+<!-- Time taken chart container -->
+<div class="container">	
+<a> "But how long will it take to complete the project?"</a>
+<br>
+<b>Approximate total hours required for completion of each service type (previous 2 years @ Renov-8):</b>
+
+<svg id="chart" width="650" height="420"></svg>
+
+Choose year:
+<select id="year"></select>
+</br>
+
+<input type="checkbox" id="sort">
+Toggle sort: 
+</br> 
+</div>
+</br>
+
+</div>
+</br>
+<!-- Links container -->
+<div class="container">
+<h3><b>Useful Renov-8 links</b></h3>
+<p> Just click on the any of the texts below to go to that site</p>
+<div class="link"> <!-- Div for linking CSS styling to links -->
+
+<!-- List (unordered) -->
+<ul style="list-style-type:disc;">
+  <li><a class="link" href= "https://cif.ie/" target="_blank">Construction Industry Fedration</a></li>
+  <li><a class="link" href= "https://www.murdockbuildersmerchants.com/" target="_blank">Murdocks Builders Merchants:</a></li>
+  <li><a class="link" href= "https://www.scsi.ie" target="_blank">Society of Chartered Surveyors:</a></li>
+  <li><a class="link" href= "https://www.cso.ie/en/statistics/construction/" target="_blank">CSO Construction Statistics:</a></li>
+  <li><a class="link" href= "https://www.riai.ie/register/the_register_of_architects" target="_blank">The Register of Architects:</a></li>
+</ul>
+</div>
+</div>
+</br
+
+</body>
+
+<script> // Behaviour
+
+// Interactive bar chart (https://blog.risingstack.com/d3-js-tutorial-bar-charts-with-javascript/)
+// import the data:
+d3.csv("data.csv").then(d => chart(d));
+
+function chart(csv) {
+	
+	// Get values from CSV:
+	csv.forEach(function(d) {
+		var dates = d.date.split("-");
+		d.year = dates[0]; d.month = dates[1];
+		d.value = +d.value;
+		return d;
+	})
+
+	var months = [...new Set(csv.map(d => d.month))],
+		years  = [...new Set(csv.map(d => d.year))];
+		
+	// Create select year option:
+	var options = d3.select("#year").selectAll("option")
+		.data(years)
+	.enter().append("option")
+		.text(d => d)
+	
+	// Create SVG variable:
+	var svg = d3.select("#chart"),
+		margin = {top: 25, bottom: 10, left: 25, right: 25},
+		width = +svg.attr("width") - margin.left - margin.right,
+		height = +svg.attr("height") - margin.top - margin.bottom;
+
+	var x = d3.scaleBand() // Construct a new band scale with the specified domain and range
+		.range([margin.left, width - margin.right])
+		.padding(0.1)
+		.paddingOuter(0.2)
+	
+	var y = d3.scaleLinear() // Transform data values into positions and lengths
+		.range([height - margin.bottom, margin.top])
+		
+	 // Create scale for x
+	var xAxis = g => g
+		.attr("transform", "translate(0," + (height - margin.bottom) + ")")
+		.call(d3.axisBottom(x).tickSizeOuter(0))
+	 // Create scale for y
+	var yAxis = g => g
+		.attr("transform", "translate(" + margin.left + ",0)")
+		.call(d3.axisLeft(y))
+	// Append SVG container:
+	svg.append("g")
+		.attr("class", "x-axis")
+
+	svg.append("g")
+		.attr("class", "y-axis")
+		
+	// Update: 
+	update(d3.select("#year").property("value"), 0)
+
+	// Function for altering year and layout:
+	function update(year, speed) {
+		// Filter by CSV values and save to "data" variable:
+		var data = csv.filter(f => f.year == year)
+	
+		y.domain([0, d3.max(data, d => d.value)]).nice()
+	// Configure transitions for y-axis:
+		svg.selectAll(".y-axis").transition().duration(speed)
+			.call(yAxis);
+		// Configure toggle sort:
+		data.sort(d3.select("#sort").property("checked")
+			? (a, b) => b.value - a.value
+			: (a, b) => months.indexOf(a.month) - months.indexOf(b.month))
+
+		x.domain(data.map(d => d.month))
+		// Configure transitions for x-axis:
+		svg.selectAll(".x-axis").transition().duration(speed)
+			.call(xAxis)
+		// Creare bar variable:
+		var bar = svg.selectAll(".bar")
+			.data(data, d => d.month)
+
+		bar.exit().remove();
+		// Append bars upon toggle:
+		bar.enter().append("rect")
+			.attr("class", "bar")
+			.attr("fill", "steelblue")
+			.attr("width", x.bandwidth())
+			.merge(bar)
+		.transition().duration(speed)
+			.attr("x", d => x(d.month))
+			.attr("y", d => y(d.value))
+			.attr("height", d => y(0) - y(d.value))
+	}
+	// Final update:
+	chart.update = update;
+}
+// Create year options:
+var select = d3.select("#year")
+	.style("border-radius", "5px")
+	.on("change", function() {
+		chart.update(this.value, 950)
+	})
+// Create toggle:
+var checkbox = d3.select("#sort")
+	.style("margin-left", "45%")
+	.on("click", function() {
+		chart.update(select.property("value"), 950)
+	})
+
+// Prevent underline anomalies:
+var objects = document.getElementsByTagName("a");
+
+   for(var no=0;no<objects.length;no++)
+   {
+      objects[no].style.textDecoration = "none";
+      objects[no].style.color = "#000000";
+   }
+   
+
+</script>
+
+</html>

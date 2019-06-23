@@ -1,0 +1,434 @@
+<!DOCTYPEhtml> 
+<html> <!--Structure -->
+
+<head>
+
+<title>Renov-8: Budget estimate</title><!--Gareth Duffy(G00364693)-->
+
+<script src="https://d3js.org/d3.v5.min.js"></script> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style> /*-- Presentation --*/
+
+/* Body text */
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+
+/* Button styling */
+.button {
+  background-color: #4CAF50; /* Green */
+  border: 3px solid #f44336;
+  border-radius: 4px; /* Rounded borders */
+  color: white;
+  padding: 16px 32px;
+  font-family: "Raleway", Arial, sans-serif
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.9s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+.button4 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #FFFF00;
+}
+
+.button4:hover {
+  background-color: #FFFF00;
+  color: white;
+}
+
+.button5 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid Indigo;
+}
+
+.button5:hover {
+  background-color: Indigo;
+  color: white;
+}
+
+/* Statistics Dashboard */
+body{
+    width:1060px;
+    margin:50px auto;
+}
+path {  stroke: #fff; }
+path:hover {  opacity:0.9; } /* Hover and change */
+rect:hover {  fill:blue; }
+.axis {  font: 11.5px sans-serif; }
+.legend tr{    border-bottom:1px solid grey; }
+.legend tr:first-child{    border-top:1px solid grey; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {  display: none; }
+.legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+.legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}
+
+
+/* Add a background color and some padding */
+.container {
+  border-radius: 4px;
+  background-color: Lavender;
+  padding: 15px;
+  border: 2px solid #f44336;
+}
+
+/* When hovered bars change colour */
+rect:hover{ fill:#f44336;}
+
+/* Body text colour */
+body {color: DarkSlateGray;}
+
+/* Justify/centre text on page */
+body {
+	padding-top: 25px;
+	margin: auto;
+	width: 1050px;
+	font: 16px 
+	font-family: "Raleway", Arial, sans-serif
+}	
+</style>
+</head>
+
+<body background="siteimages\design2.jpg">
+
+<!-- Button hyperlinks -->
+<a href="project_page1.html"><button class="button button1">Home</button>
+<a href="project_page2.html"><button class="button button2">Statistics</button>
+<a href="project_page3.html"><button class="button button3">Services</button>
+<a href="project_page4.html"><button class="button button4">Client login</button>
+<a href="project_page6.html"><button class="button button5">Gallery</button>
+
+</br>
+<!-- Budget container -->
+<div class="container">
+<h3>We can design and carry out your dream project from start to finish no matter what your budget range. Whether it's high or low, we cater for everyone.</h3>
+
+<p><h4>Deciding what you want and what you need:</h4>
+
+Start off by deciding what it is you really need from your new build, extension or renovation. Begin with the ‘must haves’ and then make a ‘wish list’. Bounce your ideas around your family and friends so all your ‘stakeholders’ feel involved, but don’t commit yourself until the financial plan is in place. Next, sit down with your partner and work out your personal finances. How much money do you actually have? How much can you borrow against your income? What are your savings? What, realistically, will your current home, if you have one, sell for?
+
+Lots of homework should follow this conversation. It is advisable to get your house valued by an agent, or we can do it for you, we have a team of surveyors.
+Start talking to lending institutions if you need to. or meet with your bank manager and discuss your plans. If you have an accountant, talk to him or her and take any advice the offer on board. Remember to make a realistic (and preferably, pessimistic) assessment of what your savings could be worth in the future, and so on.
+
+At the early stage we can fool ourselves that we’ll have more cash available than in fact is the case. It is here that money trouble can start. Yes you are excited, but you also need to be brutally honest with the sums you come up with. It is also prudent to underestimate your income and borrowing power.</p>
+<h4>Typical budget ranges estimated in Euros:</h4>
+</br>
+
+<!-- Stats dashboard div -->
+<div id='dashboard'>
+</div>
+</br>
+<p><h4>Deciding what you’re going to do:</h4>
+
+Starting out starry eyed over a dream house you don’t have the budget to fund causes many people to come to grief. In our experience, the next stage is to see a professional designer like an architect, we have a link to the Register of Architects on our Services page. Talk through your list of wants and needs and start to get a handle on the build costs.
+
+You can inquire with us regarding the charge per square metre / what the professional costs are. This is a first, rough estimate. The result is often a bit of a wake-up call, but for good reason: Now is the time to get real about what you can afford. If the answer is a lot less than you thought, do you still want to proceed?. It is even advisable for some people to back out at this point, it takes courage, but it can be dangerous for your finances, your family and your relationship to plough on with a plan that is financially doomed from the start. Don't worry, we can advise you on saving for that project.</p>
+
+<p><h4>Being clever with your money:</h4>
+
+The things that will save you money range from simple common sense to known financial black holes. Our list below is wide ranging, not exclusive and some may be too great a restriction. Have a read, you may be able to add a few of your own at the end!
+
+<!-- List (Unordered -->
+<ul style="list-style-type:disc;">
+<li>A level site with easy access to services (water, drainage, electricity, roadway, gas, telephone, cable).</li>
+<li>A building that is a simple square or rectangle on plan, external walls without internal angles (Ls or Ts), few breaks in the roof, concrete roof tiles and simple brickwork facings to external walls. Design simplicity is critical for a cost-effective building project. The most straightforward and most efficient design is a square floor plan. A rectangular plan with the same floor area is less efficient and will cost more.</li>
+<li>The fixed costs of a double or triple storey building are not much higher in comparison with a single storey. The fixed expenses consist of the groundworks, for example, the foundation, and the roof. Since double or triple storey buildings have larger floor space, they typically have higher economies of scale and a lower average build cost per square metre.</li>
+<li>Internally, straight stairs and minimum circulation areas, radiators, off the shelf windows, doors, kitchen and bathroom, simple lighting, no conservatory, avoid hardwood floors and expensive finishes.</li>
+<li>You can achieve a lot with thought and time on the internet searching for well priced finishing items in sanitary ware and kitchens for example. Getting quotes from at least three suppliers for will be time well spent. We can even assist you with all of this research prior to beginning the project.</li>
+<li>Lastly, the location of your building site can have a significant influence on the build costs. If the site is far away from resources like building materials and labour, there are additional costs concerning logistics.</li>
+</ul>
+<b>So why not give us a call or drop us an email and let us help you with getting the ball rolling on you dream?!</b>
+</div>
+</br>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+// Statistics dashboard (https://blockbuilder.org)
+
+function dashboard(id, fData){
+    var barColor = 'steelblue';
+    function segColor(c){ return {low:"#807dba", mid:"#e08214",high:"#41ab5d"}[c]; }
+    
+    // compute total for each service.
+    fData.forEach(function(d){d.total=d.freq.low+d.freq.mid+d.freq.high;});
+    
+    // function to handle histogram.
+    function histoGram(fD){
+        var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+        hGDim.w = 500 - hGDim.l - hGDim.r, 
+        hGDim.h = 300 - hGDim.t - hGDim.b;
+            
+        //create svg for histogram.
+        var hGsvg = d3.select(id).append("svg")
+            .attr("width", hGDim.w + hGDim.l + hGDim.r)
+            .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
+            .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+
+        // create function for x-axis mapping.
+        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+                .domain(fD.map(function(d) { return d[0]; }));
+
+        // Add x-axis to the histogram svg.
+        hGsvg.append("g").attr("class", "x axis")
+            .attr("transform", "translate(0," + hGDim.h + ")")
+            .call(d3.svg.axis().scale(x).orient("bottom"));
+
+        // Create function for y-axis map.
+        var y = d3.scale.linear().range([hGDim.h, 0])
+                .domain([0, d3.max(fD, function(d) { return d[1]; })]);
+
+        // Create bars for histogram to contain rectangles and freq labels.
+        var bars = hGsvg.selectAll(".bar").data(fD).enter()
+                .append("g").attr("class", "bar");
+        
+        //create the rectangles.
+        bars.append("rect")
+            .attr("x", function(d) { return x(d[0]); })
+            .attr("y", function(d) { return y(d[1]); })
+            .attr("width", x.rangeBand())
+            .attr("height", function(d) { return hGDim.h - y(d[1]); })
+            .attr('fill',barColor)
+            .on("mouseover",mouseover)// mouseover is defined below.
+            .on("mouseout",mouseout);// mouseout is defined below.
+            
+        //Create the frequency labels above the rectangles.
+        bars.append("text").text(function(d){ return d3.format(",")(d[1])})
+            .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
+            .attr("y", function(d) { return y(d[1])-5; })
+            .attr("text-anchor", "middle");
+        
+        function mouseover(d){  // utility function to be called on mouseover.
+            // filter for selected state.
+            var st = fData.filter(function(s){ return s.State == d[0];})[0],
+                nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
+               
+            // call update functions of pie-chart and legend.    
+            pC.update(nD);
+            leg.update(nD);
+        }
+        
+        function mouseout(d){    // utility function to be called on mouseout.
+            // reset the pie-chart and legend.    
+            pC.update(tF);
+            leg.update(tF);
+        }
+        
+        // create function to update the bars. This will be used by pie-chart.
+        hG.update = function(nD, color){
+            // update the domain of the y-axis map to reflect change in frequencies.
+            y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
+            
+            // Attach the new data to the bars.
+            var bars = hGsvg.selectAll(".bar").data(nD);
+            
+            // transition the height and color of rectangles.
+            bars.select("rect").transition().duration(500)
+                .attr("y", function(d) {return y(d[1]); })
+                .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                .attr("fill", color);
+
+            // transition the frequency labels location and change value.
+            bars.select("text").transition().duration(500)
+                .text(function(d){ return d3.format(",")(d[1])})
+                .attr("y", function(d) {return y(d[1])-5; });            
+        }        
+        return hG;
+    }
+    
+    // function to handle pie-chart.
+    function pieChart(pD){
+        var pC ={},    pieDim ={w:250, h: 250};
+        pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
+                
+        // create svg for pie chart.
+        var piesvg = d3.select(id).append("svg")
+            .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+            .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
+        
+        // create function to draw the arcs of the pie slices.
+        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
+
+        // create a function to compute the pie slice angles.
+        var pie = d3.layout.pie().sort(null).value(function(d) { return d.freq; });
+
+        // Draw the pie slices.
+        piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
+            .each(function(d) { this._current = d; })
+            .style("fill", function(d) { return segColor(d.data.type); })
+            .on("mouseover",mouseover).on("mouseout",mouseout);
+
+        // create function to update pie-chart. This will be used by histogram.
+        pC.update = function(nD){
+            piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
+                .attrTween("d", arcTween);
+        }        
+        // Utility function to be called on mouseover a pie slice.
+        function mouseover(d){
+            // call the update function of histogram with new data.
+            hG.update(fData.map(function(v){ 
+                return [v.State,v.freq[d.data.type]];}),segColor(d.data.type));
+        }
+        //Utility function to be called on mouseout a pie slice.
+        function mouseout(d){
+            // call the update function of histogram with all data.
+            hG.update(fData.map(function(v){
+                return [v.State,v.total];}), barColor);
+        }
+        // Animating the pie-slice requiring a custom function which specifies
+        // how the intermediate paths should be drawn.
+        function arcTween(a) {
+            var i = d3.interpolate(this._current, a);
+            this._current = i(0);
+            return function(t) { return arc(i(t));    };
+        }    
+        return pC;
+    }
+    
+    // function to handle legend.
+    function legend(lD){
+        var leg = {};
+            
+        // create table for legend.
+        var legend = d3.select(id).append("table").attr('class','legend');
+        
+        // create one row per segment.
+        var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+            
+        // create the first column for each segment.
+        tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
+            .attr("width", '16').attr("height", '16')
+			.attr("fill",function(d){ return segColor(d.type); });
+            
+        // create the second column for each segment.
+        tr.append("td").text(function(d){ return d.type;});
+
+        // create the third column for each segment.
+        tr.append("td").attr("class",'legendFreq')
+            .text(function(d){ return d3.format(",")(d.freq);});
+
+        // create the fourth column for each segment.
+        tr.append("td").attr("class",'legendPerc')
+            .text(function(d){ return getLegend(d,lD);});
+
+        // Utility function to be used to update the legend.
+        leg.update = function(nD){
+            // update the data attached to the row elements.
+            var l = legend.select("tbody").selectAll("tr").data(nD);
+
+            // update the frequencies.
+            l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
+
+            // update the percentage column.
+            l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});        
+        }
+        
+        function getLegend(d,aD){ // Utility function to compute percentage.
+            return d3.format("%")(d.freq/d3.sum(aD.map(function(v){ return v.freq; })));
+        }
+
+        return leg;
+    }
+    
+    // calculate total frequency by segment for all state.
+    var tF = ['low','mid','high'].map(function(d){ 
+        return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
+    });    
+    
+    // calculate total frequency by state for all segment.
+    var sF = fData.map(function(d){return [d.State,d.total];});
+
+    var hG = histoGram(sF), // create the histogram.
+        pC = pieChart(tF), // create the pie-chart.
+        leg= legend(tF);  // create the legend.
+}
+
+// Arrays for charts
+var freqData=[
+{State:'Carpentry',freq:{low:1786, mid:3319, high:8249}}
+,{State:'Plumbing',freq:{low:1601, mid:2412, high:4674}}
+,{State:'Tiling',freq:{low:932, mid:2149, high:4418}}
+,{State:'Electric',freq:{low:1832, mid:2352, high:4062}}
+,{State:'Blockwork',freq:{low:1481, mid:2304, high:4948}}
+,{State:'Set out',freq:{low:1019, mid:1367, high:1663}}
+,{State:'Windows',freq:{low:1819, mid:4247, high:9203}}
+,{State:'Doors',freq:{low:2498, mid:3852, high:8842}}
+,{State:'Plaster',freq:{low:1797, mid:2849, high:4534}}
+,{State:'Painting',freq:{low:1162, mid:1679, high:4171}}
+];
+
+dashboard('#dashboard',freqData);
+
+// Prevent underline anomalies:
+var objects = document.getElementsByTagName("a");
+
+   for(var no=0;no<objects.length;no++)
+   {
+      objects[no].style.textDecoration = "none";
+      objects[no].style.color = "#000000";
+   }
+</script>
+
+</html>

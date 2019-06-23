@@ -1,0 +1,472 @@
+<!DOCTYPEhtml> 
+<html> <!--Structure -->
+
+<head>
+
+<title>Renov-8: Statistics</title><!--Gareth Duffy(G00364693)-->
+
+<script src="https://d3js.org/d3.v5.min.js"></script> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style> /*-- Presentation --*/
+
+/* Body text */
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+
+/* Button styling */
+.button {
+  background-color: #4CAF50; /* Green */
+  border: 3px solid #f44336;
+  border-radius: 4px; /* Rounded borders */
+  color: white;
+  padding: 16px 32px;
+  font-family: "Raleway", Arial, sans-serif
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.9s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+.button4 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid #FFFF00;
+}
+
+.button4:hover {
+  background-color: #FFFF00;
+  color: white;
+}
+
+.button5 {
+  background-color: Lavender; 
+  color: black; 
+  border: 2px solid Indigo;
+}
+
+.button5:hover {
+  background-color: Indigo;
+  color: white;
+}
+
+/* When hovered bars change colour */
+rect:hover{
+       fill:#f44336;
+   }
+
+/* Add a background color and some padding */
+.container {
+  border-radius: 4px;
+  background-color: Lavender;
+  padding: 14px;
+  border: 2px solid #f44336;
+}
+
+/* Style text for donut chart */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 960px;
+  height: 500px;
+  position: relative;
+}
+
+/* Size of SVG */
+svg {
+	width: 300%;
+	height: 300%;
+}
+
+/* SVG styling */
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;
+}
+
+.labelValue
+{
+	font-size: 100%;
+	opacity: .1;
+	
+}
+
+.toolTip {
+    font-family: font-family: "Raleway", Arial, sans-serif;
+    position: absolute; /* -- Positioning elements --*/
+    display: none;
+    width: auto;
+    height: auto;
+    background: none repeat scroll 0 0 white;
+    border: 3px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: -3px 3px 15px #f44336;; /*-- right, down, blur, colour --*/
+    color: black;
+    font: 16px sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+text {
+  font: 16px Arial Narrow;
+}
+
+/* Body text colour */
+body {color: DarkSlateGray;}
+
+/* Justify/centre text on page*/
+body {
+	padding-top: 25px;
+	margin: auto;
+	width: 1050px;
+	font: 16px 
+	font-family: "Raleway", Arial, sans-serif
+}	
+
+</style>
+
+<script src="https://d3js.org/d3.v5.js"></script>
+
+</head>
+
+<!-- Background image -->
+<body background="siteimages\design2.jpg">
+<!-- Button hyperlinks -->
+<a href="project_page1.html"><button class="button button1">Home</button>
+<a href="project_page3.html"><button class="button button2">Services</button>
+<a href="project_page4.html"><button class="button button3">Client login</button>
+<a href="project_page5.html"><button class="button button5">Budget estimate</button>
+<a href="project_page6.html"><button class="button button4">Gallery</button>
+
+<!-- Stats container -->
+<div class="container">
+<h3><b>Statistics</b></h3>
+</br>
+<!-- Links block -->
+<a class="link" href= "https://www.cso.ie/en/statistics/construction/" target="_blank"><b>Click here for the latest CSO Construction Statistics</b></a>
+</br>
+<a class="link" href= "https://www.housing.gov.ie/housing/statistics/housing-statistics" target="_blank"><b>Click here for the latest Housing Statistics</b></a>
+</br>
+<a class="link" href= "https://selfbuild.ie" target="_blank"><b>Click here for the latest Self Build Guidelines and Statistics</b></a>
+</br>
+<!-- Text block -->
+<p>With renov-8, typically well over 90% of project work is comprised of carpentry, blockwork, mechanical (electrical & plumbing), plastering, painting and tiling. These figures are not set in stone but give you a feel for what is involved. The charts below show what percentage of the overall project is needed (on average) for each type of work to be completed. The actual time taken per phase can varies widely depending on the nature of the individual project, e.g. a large scale bespoke extension will usually take notably longer than a conventional renovation. Please also read our budget estimate and services pages for further information.
+</p>
+<br>
+<!-- Pie chart -->
+<image src = "siteimages\stats.jpg" style="width:480px;height:350px;"> 
+<!-- Animated donut chart generated generated with arrays -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</br>
+</br>
+<i>Percentage of total project time necessary for each type of work to be completed:</i>
+</br>
+(Click to filter by project type)
+</br>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</br>
+<!-- Selection options for donut chart -->
+  <form>
+    <label><input type="radio" name="dataset" id="dataset" value="total" checked> Typical New build</label>
+    <label><input type="radio" name="dataset" id="dataset" value="option1"> Typical Renovation</label>
+    <label><input type="radio" name="dataset" id="dataset" value="option2"> Typical Extension</label>
+</form>
+</div>
+</body>
+
+<script> // Behaviour 
+
+// Donut pie chart (https://bl.ocks.org/)
+    d3.select("input[value=\"total\"]").property("checked", true);
+// append the svg object
+var svg = d3.select("body")
+	.append("svg")
+	.append("g")
+// Add attributes 
+svg.append("g")
+	.attr("class", "slices");
+svg.append("g")
+	.attr("class", "labelName");
+svg.append("g")
+	.attr("class", "labelValue");
+svg.append("g")
+	.attr("class", "lines");
+
+// Set the dimensions of the chart
+// Radius of the donut  
+var width = 960,
+    height = 450,
+    radius = Math.min(width, height) / 2;
+
+// Compute the position of each group on the donut:
+var pie = d3.layout.pie()
+	.sort(null) // Do not sort group by size
+	.value(function(d) {
+    console.log(d);
+		return d.value;
+	});
+
+// The arc generator:
+var arc = d3.svg.arc()
+	.outerRadius(radius * 0.8) // Outer ring
+	.innerRadius(radius * 0.4); // Size of the donut hole
+	
+// Another arc that won't be drawn, this is just for labels positioning
+var outerArc = d3.svg.arc()
+	.innerRadius(radius * 0.9)
+	.outerRadius(radius * 0.9);
+
+var legendRectSize = radius * 0.05;
+var legendSpacing = radius * 0.02;
+
+var div = d3.select("body").append("div").attr("class", "toolTip");
+
+svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+// Conigure colours:
+var colorRange = d3.scale.category20();
+var color = d3.scale.ordinal()
+	.range(colorRange.range());
+
+// Data Arrays:
+arrayTotal = [
+		{label:"Carpentry", value:19}, 
+        {label:"Plastering", value:5}, 
+        {label:"Mechanical", value:13},
+        {label:"Tiling", value:17},
+        {label:"Painting", value:19},
+        {label:"Blockwork", value:27}
+        ];
+
+arrayOption1 = [
+		{label:"Carpentry", value:22}, 
+        {label:"Plastering", value:33}, 
+        {label:"Mechanical", value:4},
+        {label:"Tiling", value:15},
+        {label:"Painting", value:36},
+        {label:"Blockwork", value:0}
+        ];
+
+arrayOption2 = [
+		{label:"Carpentry", value:10}, 
+        {label:"Plastering", value:20}, 
+        {label:"Mechanical", value:30},
+        {label:"Tiling", value:5},
+        {label:"Painting", value:12},
+        {label:"Blockwork", value:23}
+        ];
+
+change(arrayTotal);
+
+
+d3.selectAll("input")
+	.on("change", selectDataset);
+	
+// Change functions:	
+function selectDataset()
+{
+	var value = this.value;
+	if (value == "Total house stats")
+	{
+		change(arrayTotal);
+	}
+	else if (value == "option1")
+	{
+		change(arrayOption1);
+	}
+	else if (value == "option2")
+	{
+		change(arrayOption2);
+	}
+}
+	
+function change(data) {
+
+//Donut Slices configuration:
+	var slice = svg.select(".slices").selectAll("path.slice")
+        .data(pie(data), function(d){ return d.data.label });
+	// Add attributes to slices:
+    slice.enter()
+        .insert("path")
+        .style("fill", function(d) { return color(d.data.label); })
+    		.style("opacity", 0.7)
+        .attr("class", "slice");
+
+    slice // Configure transitions:
+        .transition().duration(1000)
+        .attrTween("d", function(d) {
+            this._current = this._current || d;
+            var interpolate = d3.interpolate(this._current, d);
+            this._current = interpolate(0);
+            return function(t) {
+                return arc(interpolate(t));
+            };
+        })
+    slice // Configure mouse-over:
+        .on("mousemove", function(d){
+            div.style("left", d3.event.pageX+10+"px");
+            div.style("top", d3.event.pageY-25+"px");
+            div.style("display", "inline-block");
+            div.html((d.data.label)+"<br>"+(d.data.value)+"%");
+        });
+    slice
+        .on("mouseout", function(d){
+            div.style("display", "none");
+        });
+
+    slice.exit()
+        .remove();
+		
+// Legend configuration:
+    var legend = svg.selectAll('.legend')
+        .data(color.domain())
+        .enter()
+        .append('g')
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) {
+            var height = legendRectSize + legendSpacing;
+            var offset =  height * color.domain().length / 2;
+            var horz = -3 * legendRectSize;
+            var vert = i * height - offset;
+            return 'translate(' + horz + ',' + vert + ')';
+        });
+// Add attributes to rectangle:
+    legend.append('rect')
+        .attr('width', legendRectSize)
+        .attr('height', legendRectSize)
+        .style('fill', color)
+        .style('stroke', color);
+// Add attributes to text:
+    legend.append('text')
+        .attr('x', legendRectSize + legendSpacing)
+        .attr('y', legendRectSize - legendSpacing)
+        .text(function(d) { return d; });
+
+// Text label configuration:
+    var text = svg.select(".labelName").selectAll("text")
+        .data(pie(data), function(d){ return d.data.label });
+
+    text.enter()
+        .append("text")
+        .attr("dy", ".35em")
+        .text(function(d) {
+            return (d.data.label+": "+d.value+"%");
+        });
+
+    function midAngle(d){
+        return d.startAngle + (d.endAngle - d.startAngle)/2;
+    }
+// Text transitions and anchors:
+    text
+        .transition().duration(1000)
+        .attrTween("transform", function(d) {
+      console.log(d);
+            this._current = this._current || d;
+            var interpolate = d3.interpolate(this._current, d);
+            this._current = interpolate(0);
+            return function(t) {
+                var d2 = interpolate(t);
+                var pos = outerArc.centroid(d2);
+                pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+                return "translate("+ pos +")";
+            };
+        })
+        .styleTween("text-anchor", function(d){
+            this._current = this._current || d;
+            var interpolate = d3.interpolate(this._current, d);
+            this._current = interpolate(0);
+            return function(t) {
+                var d2 = interpolate(t);
+                return midAngle(d2) < Math.PI ? "start":"end";
+            };
+        })
+        .text(function(d) {
+            return (d.data.label+": "+d.value+"%");
+        });
+
+
+    text.exit()
+        .remove();
+
+// Slice to text polylines configuration 
+
+// Add the polylines between chart and labels:
+    var polyline = svg.select(".lines").selectAll("polyline")
+        .data(pie(data), function(d){ return d.data.label });
+
+    polyline.enter()
+        .append("polyline");
+
+    polyline.transition().duration(1000)
+        .attrTween("points", function(d){
+            this._current = this._current || d;
+            var interpolate = d3.interpolate(this._current, d);
+            this._current = interpolate(0);
+            return function(t) {
+                var d2 = interpolate(t);
+                var pos = outerArc.centroid(d2);
+                pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+                return [arc.centroid(d2), outerArc.centroid(d2), pos];
+            };
+        });
+
+    polyline.exit()
+        .remove();
+};
+  
+// Prevent underline anomalies:
+var objects = document.getElementsByTagName("a");
+
+   for(var no=0;no<objects.length;no++)
+   {
+      objects[no].style.textDecoration = "none";
+      objects[no].style.color = "#000000";
+   }
+</script>
+
+</html>

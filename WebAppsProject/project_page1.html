@@ -1,0 +1,671 @@
+<!DOCTYPEhtml> 
+<html> <!--Structure -->
+
+<head>
+	
+<title>Renov-8: Homepage</title><!--Gareth Duffy(G00364693)-->
+
+<script src="https://d3js.org/d3.v5.min.js"></script> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style> /*-- Presentation --*/
+
+/* Body text */
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 3px}
+.w3-row-padding img {margin-bottom: 12px}
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: Lavender;
+  font-family: "Raleway", Arial, sans-serif;
+  border: 2px solid #f44336;
+  border-radius: 4px; /* Rounded borders */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: LightSlateGray;
+  text-align: center;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: center;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: DarkSlateGray;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
+
+/* Justify/centre text on page */
+body {
+	padding-top: 25px;
+	margin: auto;
+	width: 1050px;
+	font: 16px 
+	font-family: "Raleway", Arial, sans-serif
+}	
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, 
+textarea {
+height: 40px;
+  width: 100%; /* Full width */
+  padding: 8px 8px; /* Some padding */  
+  border: 2px solid  #f44336; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 5px; /* Add a top margin */
+  margin-bottom: 5px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a color */
+input[type=submit]:hover {
+  background-color: lightgrey;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 4px;
+  background-color: Lavender;
+  padding: 15px;
+  border: 2px solid #f44336;
+} 
+
+/* Social media bar */
+
+/* Fixed/sticky icon bar (vertically aligned 75% from the top of the screen) */
+.icon-bar {
+  position: fixed;
+  top: 75%;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  border: 2px solid #f44336;
+}
+
+/* Style the icon bar links */
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+/* Style the social media icons with color */
+.icon-bar a:hover {
+  background-color: Lavender;;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+
+/* Image hover effects previous projects */
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: CornflowerBlue;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* When hovered bars change colour */
+rect:hover{ fill:#f44336;}
+
+/* Bodt text colour */
+body {color: DarkSlateGray;}
+
+</style>
+  
+</head>
+
+<!--Background image -->
+<body background="siteimages\design2.jpg"> 
+
+<!-- Navigation menu -->
+<div class="navbar">  
+<!-- Navbar configuration -->
+  <nav> 
+	  <a href="#gallery">Previous projects</a>
+	  <a href="#testimonials">Client Testimonials</a>
+	  <a href="project_page6.html">Gallery</a>
+	  <a href="#contact">Contact Us</a>
+	  <a href="project_page5.html">Budget estimate</a>
+  </nav>
+  
+<!-- Navbar dropdown configuration -->
+  <div class="dropdown">
+    <button class="dropbtn">More of Renov-8...
+    <b class="fa fa-caret-down"></b>
+    </button>
+   <div class="dropdown-content">
+     <a href="project_page2.html">Statistics</a>
+     <a href="project_page3.html">Services</a>
+     <a href="project_page4.html" target="_blank">Client login</a>
+    </div>
+  </div> 
+</div> 
+</br>
+</div>
+
+<!-- Description container -->
+     <div class="container"> 
+	 <!-- Renov-8 logo -->
+     <img src="renov8avatar.png" alt="Avatar" class="avatar" style="width:285px;height:200px;" >
+
+<h3><b>Why choose Renov-8?</b></h3>
+ <p>Renov-8 are a specialist contemporary construction company who focus on unique, private domestic and commercial builds and renovations. From dream extensions to dream homes to dream retail outlets, we are a highly reputable outlet who collaborate with the best designers, trade-persons and architects across Ireland.</p>
+		  
+<p>At Renov-8, we understand that every project is unique. Every build presents its own challenges that require unique solutions. We strive to assist our clients through the entire building process effortlessly, efficiently and happily.</p>
+<p>We have over 30 years of experience and bring with us a wealth of knowledge, experience, a vast network of suppliers and most importantly a very high level of craftsmanship. We contract only the best trade-persons and the best quality materials so that your bespoke build stands the test of time.</p>
+
+<b>Our team are the best and our projects are even better</b>
+<ul>
+<li>They are unique</li>
+<li>They run smoothly</li>
+<li>They stand out</li> 
+</ul>
+<b>So do we</b>
+</br>
+	</div>      
+      </div>
+    </div>
+  </div>
+  <br>
+
+<!-- Previous projects container -->
+  <div id="gallery">
+    <div class="container">
+     <h3><b>Previous projects</b></h3>
+    </div>
+    <div class="gallery-flex-wrap">
+</br>
+<!--Images blocks-->
+<div class="container">
+  <img src="siteimages\ballycullen3.jpg" alt="Avatar" class="image" style="width:490px;height:300px;">
+  <div class="overlay">
+    <div class="text">Ballycullen, Dublin 24 </div>
+  </div>
+</div>  
+</br>
+<div class="container">
+  <img src="siteimages\Homepage.jpg" alt="Avatar" class="image" style="width:490px;height:300px;">
+  <div class="overlay">
+    <div class="text">Holly Park, South County Dublin </div>
+  </div>
+</div> 
+</br>
+<div class="container">
+  <img src="siteimages\habourview.jpg" alt="Avatar" class="image" style="width:490px;height:300px;">
+  <div class="overlay">
+    <div class="text">Harbour View, Greystones Co. Wicklow </div>
+  </div>
+</div> 
+</br>
+
+<!-- Suggestion container -->
+<div class="container">
+<p>Why not check out gallery section in the menu tab for more!</p>
+</div>
+</br>
+
+<!-- Testemonials container -->
+  <div id="testimonials">
+      <div class="container">
+      <h3><b>Client testimonials</b></h3>
+  
+
+<p>"I've set up a Facebook account specifically because I wanted to praise Gareth
+and his team for their wonderful work and dedication" - Peter Murphy, Ballycullen 
+
+<p>"The team at Renov-8 were courteous, efficient and attentive to detail in undertaking a complete overhaul of my little house, and I think the results speak for themselves. Unfortunately Facebook won't let me link to my AirBnB listing but it has been a huge hit with everyone who has stayed there" - James O' Brien, Terenure</p>
+
+<p>"Everything about this home is  stylish and user-friendly.Initially I wasn’t sure how I felt about running an investment home, but I’ve found it a joy in many respects. The fact that I’m so proud of what’s being offered is definitely one of the main ones and RENOV-8 played a huge part in achieving that" - David McKnight, Navan</p>
+
+<p>"The work on my extension/renovation was completed in the same meticulous manner it was started: nothing seemed too much trouble and normal follow-ups were conducted fully sensitively to the ongoing business in the house. Truthfully, I really couldn’t recommend RENOV-8 highly enough" - Elena Martinez, Holly Park</p>
+</div>
+ </div>
+  </div>
+  </br>
+  
+<!-- Contact container -->
+  <div id="contact">
+    <div class="container">
+      <h3><b>Why not contact us directly?</b></h3> 
+	          <a> We would love to hear from you!</a>
+			  <br>	
+  			  <a>Renov-8:</a>
+			  </br>
+			  <a>25 Hunters Way, Ballycullen, Co Dublin.</a>
+			  </br>
+			  <a>Tel: 045 12 33 77</a>
+			  </br>
+			  <a>M: 085 712 57 14</a>
+			  </br>
+			  <a href="https://outlook.live.com/owa/" target="_blank">enquiries@renov8.ie</a>
+			  </br>
+			  <a href="https://www.facebook.com/" target="_blank">www.facebook.com/Renov-8</a>
+			  </div>
+            </div>
+      	</br>
+
+<!-- Enquiry container -->
+<div class="container">
+<h3><b>Or simply make an enquiry below!</b></h3>
+
+<!-- Validated enquiry form -->		   
+<!-- Call function once form submitted -->		    
+ 
+<form name="RegForm" action="project_page1.html"  onsubmit="return renov8form()" method="post">  
+    <!-- Form input elements -->  
+    <p>Your name: <input type="text" size=65 name="Name" required > </p>        
+    <p> Address: <input type="text" size=65 name="Address">  </p> 
+    <p>E-mail: <input type="text" size=65 name="EMail" pattern=".+@.+" size="30" required></p> 
+    <p>Mobile: <input type="text" size=65 name="Telephone" required > </p>   
+    <!-- Dropdown selection box -->       
+    <p>What type of project do you need ?    
+        <select type="text" value="" name="Subject"> 
+            <option>New build</option> 
+            <option>Extension</option> 
+            <option>Renovation</option> 
+            <option>Attic conversion</option> 
+            <option>Commercial project</option> 
+        </select></p>
+    <p>Comments:  <textarea cols="55" name="Comment"> </textarea></p> 
+    <p><input type="submit" value="Send" name="Submit"><input type="reset" value="Reset" name="Reset"></p>          
+</form> 
+</div>             
+          </div>
+        </div>
+      </div>
+	  
+ <!-- Load font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Social media icon bar -->
+<div class="icon-bar">
+  <a href="https://www.facebook.com/" class="facebook"  target="_blank"><i class="fa fa-facebook"></i></a> 
+  <a href="https://twitter.com/" class="twitter"  target="_blank"><i class="fa fa-twitter"></i></a> 
+  <a href="https://www.google.ie/" class="google"  target="_blank"><i class="fa fa-google"></i></a> 
+  <a href="https://www.linkedin.com/" class="linkedin"  target="_blank"><i class="fa fa-linkedin"></i></a>
+  <a href="https://www.youtube.com/" class="youtube"  target="_blank"><i class="fa fa-youtube"></i></a> 
+</div>
+</br>		   
+
+<!-- Chart container -->
+<div class="container">
+<b>We receive TONNES of enquiries...use our chart to see how many!</b>
+<br>
+Pick a chart height:
+<select name="" id="chartHeight">
+    <option value="200">200 pixels</option>
+    <option value="400">400 pixels</option>
+    <option value="600">600 pixels</option>
+</select>
+ 
+Pick a chart color:
+<input type="color" id="colorPicker">
+ </br>
+Generate the statistics:
+<button onclick="drawChart()">Show me the stats</button>
+</br>
+Amount of enquiries Renov-8 receive monthly:
+  <div id="myDiv"></div>
+</div>
+</div>
+</br>
+
+<!-- Interactive DOM events container -->
+<div class="container">
+<b>Please share Renov-8 via our social media bar located in the bottom-right corner over there...see it? </b>
+</br>
+</br>
+<button onclick="displayDate()">Hmm, what time is it?</button><p id="demo"></p>
+<button id="myBtn2">Go on, try and click me</button>
+</br>
+</br>
+<button id="myBtn">Click me too</button>
+</br>
+</br>
+
+<!-- Background manipulator -->
+<table style="width:210px;height:70px">
+  <tr>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:PowderBlue">
+    </td>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:Crimson">
+    </td>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:DarkSlateGray">
+    </td>
+	 <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="siteimages\design2.jpg"
+    style= background="siteimages\design2.jpg">
+  </tr>
+</table>
+
+<h4 onclick="this.innerHTML='We strive to please our clients here at Renov-8!'">Click me!</h4>
+
+          <section id="copyright">
+      <small>Renov-8 Ltd 2019, All rights reserved © | Created by <a href="https://www.gmit.ie">StUdEnT tHeMeS @ GMIT</a></small>
+  </section> 
+</div> 
+</body>
+ 
+<script> // Behavior 
+
+function renov8form()                                    
+{   // Form variables:
+    var name = document.forms["RegForm"]["Name"];               
+    var email = document.forms["RegForm"]["EMail"];    
+    var phone = document.forms["RegForm"]["Telephone"];  
+    var what =  document.forms["RegForm"]["Subject"];  
+    var address = document.forms["RegForm"]["Address"];  
+    // If name is left unfilled:
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your name."); // Then pop up displayed
+        name.focus(); 
+        return false; 
+    } 
+    // If address is left unfilled:
+    if (address.value == "")                               
+    { 
+        window.alert("Please enter your address."); // Then pop up displayed
+        name.focus(); 
+        return false; 
+    } 
+    // If email is left unfilled:   
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); // Then pop up displayed
+        email.focus(); 
+        return false; 
+    } 
+    // If email does not adhere to:
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); // Then pop up displayed
+        email.focus(); 
+        return false; 
+    } 
+    // If email does not adhere to:
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); // Then pop up displayed
+        email.focus(); 
+        return false; 
+    } 
+    // If phone not filled:
+    if (phone.value == "")                           
+    { 
+        window.alert("Please enter your telephone number."); // Then pop up displayed
+        phone.focus(); 
+        return false; 
+    } 
+    // If project type not selected:
+    if (what.selectedIndex < 1)                  
+    { 
+        alert("Please enter your desired project."); // Then pop up displayed
+        what.focus(); 
+        return false; 
+    } 
+    // Once sufficiently completed, display pop up:
+    return alert("Thank you for your query! Renov-8 will be in touch very soon..."); 
+}
+
+// Interactive coloured bar-chart (M. Duignan, week 13, Web Apps Dev, GMIT)
+
+function drawChart(){
+	 // import the client data
+     d3.csv("client.csv").then(function(data) {
+     console.log(data);
+ 
+     // Values for bar chart
+	 // Get various element with id's
+     var height = document.getElementById('chartHeight').value;
+     var width = 420;
+     var dataCount = data.length;
+     var gap = 2;
+     var chartColor = document.getElementById('colorPicker').value;
+     // Convert to numbers for d3.max to work properly in scaling
+     data.forEach(function(d){
+       d.client = Number(d.client);
+     })
+     // Create scale for y
+     var yScale =d3.scaleLinear()
+       .domain([0,d3.max(data, function(d){
+         return d.client;
+       })])
+       .range([height,0]);
+      // Create scale for x
+      var xScale = d3.scaleBand()
+          .domain(data.map(function(d){
+              return d.month;
+          }))
+          .range([0, width])
+     // Create y axis
+     var yAxis = d3.axisLeft()
+         .scale(yScale)
+         // Create x axis
+     var xAxis = d3.axisBottom()
+         .scale(xScale);
+ 
+    // Removes previous code
+    d3.select("#myDiv").selectAll("*").remove();
+     // Create the svg container using d3 select, append svg to div above
+     let svgContainer = d3.select("#myDiv").append("svg")
+     .attr("width", 1000)
+     .attr("height", 1000);
+     // Create a rectangle
+     var myRectangle = svgContainer.selectAll("rect")
+       .data(data);
+     // Add attributes to rectangle
+     myRectangle.enter()
+       .append("rect")
+         .attr("x",function(d,i){
+           return (50+(i*(width/dataCount)));
+           })
+         .attr("y",function(d){
+             return yScale(d.client);
+           })
+         .attr("width",(width/dataCount -gap))
+         .attr("height",function(d){
+             return height-yScale(d.client);
+           })
+         .attr("fill",chartColor);
+     //Ensure axis is shown on top we do it here AFTER bars are drawn
+     //Appending "svgContainer" declared above on line 454
+     svgContainer.append("g")
+       .attr("transform", "translate(45,0)")
+       .call(yAxis);
+ 
+     svgContainer.append("g")
+       .attr("transform", "translate(50," +height+")")
+       .call(xAxis)
+       .selectAll("text")
+           .attr("transform", "rotate(60)")
+           .attr("text-anchor", "start")
+           .attr("x", "9")
+           .attr("y", "3");
+     });
+ }
+ 
+// Prevent underline anomalies:
+var objects = document.getElementsByTagName("a");
+
+   for(var no=0;no<objects.length;no++)
+   {
+      objects[no].style.textDecoration = "none";
+      objects[no].style.color = "#000000";
+   }
+   
+// Display today's date event:
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
+
+// Display message event:
+document.getElementById("myBtn").addEventListener("click", function() {
+  alert("Hello there!...we hope you like our website!");
+});
+
+// Numerous event handlers to the same element:
+var x = document.getElementById("myBtn2");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+
+// Mouseover functions:
+function myFunction() {
+  document.getElementById("demo").innerHTML += " Hey you just hovered over me!<br>";
+}
+
+function mySecondFunction() {
+  document.getElementById("demo").innerHTML += "Did you just click me?!<br> ";
+}
+
+function myThirdFunction() {
+  document.getElementById("demo").innerHTML += "Agghhh! so much hovering!<br>";
+}
+
+// Change background colour:
+function bgChange(bg) {
+  document.body.style.background = bg;
+}
+</script> 
+
+<!-- Return to the top of the page-->
+<a href="project_page1.html"><b>Take me back to the top...</b></a>
+</br>
+</br>
+
+</html>
